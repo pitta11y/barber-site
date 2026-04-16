@@ -13,37 +13,57 @@
 body{
   font-family:'Poppins',sans-serif;
   color:white;
-  background:url('bg.jpg') center/cover no-repeat fixed;
+  background:url('bg.jpg') center center / cover no-repeat fixed;
 }
 
+/* sötét overlay */
 body::before{
   content:"";
   position:fixed;
-  width:100%;height:100%;
+  width:100%;
+  height:100%;
   background:rgba(0,0,0,0.85);
+  top:0;
+  left:0;
   z-index:-1;
 }
 
-.container{width:90%;max-width:1200px;margin:auto;}
-section{padding:100px 0;}
+.container{
+  width:90%;
+  max-width:1200px;
+  margin:auto;
+}
+
+section{
+  padding:100px 0;
+}
 
 /* NAV */
 nav{
-  position:fixed;width:100%;top:0;
+  position:fixed;
+  width:100%;
+  top:0;
   background:rgba(0,0,0,0.95);
-  padding:20px 0;z-index:1000;
+  padding:20px 0;
+  z-index:1000;
 }
 
 nav .container{
-  display:flex;justify-content:space-between;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
 }
 
 nav a{
-  color:white;margin-left:25px;text-decoration:none;
+  color:white;
+  margin-left:25px;
+  text-decoration:none;
   font-weight:600;
 }
 
-nav a:hover{color:#c59d5f;}
+nav a:hover{
+  color:#c59d5f;
+}
 
 /* HERO */
 .hero{
@@ -52,8 +72,14 @@ nav a:hover{color:#c59d5f;}
   align-items:center;
 }
 
-.hero h1{font-size:60px;}
-.hero h2{color:#c59d5f;}
+.hero h1{
+  font-size:60px;
+}
+
+.hero h2{
+  color:#c59d5f;
+  margin:10px 0;
+}
 
 .btn{
   background:#c59d5f;
@@ -63,52 +89,60 @@ nav a:hover{color:#c59d5f;}
   text-decoration:none;
   display:inline-block;
   margin-top:20px;
-}
-
-/* STICKY BUTTON */
-.sticky-btn{
-  position:fixed;
-  bottom:80px;
-  right:20px;
-  background:#c59d5f;
-  padding:15px 20px;
-  border-radius:50px;
-  color:black;
-  text-decoration:none;
   font-weight:bold;
-  box-shadow:0 0 20px rgba(197,157,95,0.6);
 }
 
-/* FADE ANIMATION */
-.fade{
-  opacity:0;
-  transform:translateY(40px);
-  transition:0.8s;
+/* kis képek */
+.hero-gallery{
+  margin-top:30px;
+  display:flex;
+  gap:10px;
 }
 
-.fade.active{
-  opacity:1;
-  transform:translateY(0);
+.hero-gallery img{
+  width:100px;
+  border-radius:10px;
+  transition:0.3s;
+}
+
+.hero-gallery img:hover{
+  transform:scale(1.1);
 }
 
 /* ABOUT */
-.about{text-align:center;}
+.about{
+  text-align:center;
+}
+
 .about img{
-  width:220px;height:220px;border-radius:50%;
-  border:3px solid #c59d5f;margin-bottom:20px;
+  width:220px;
+  height:220px;
+  border-radius:50%;
+  border:3px solid #c59d5f;
+  margin-bottom:20px;
+  object-fit:cover;
 }
 
 /* SERVICES */
 .cards{
-  display:flex;gap:20px;flex-wrap:wrap;
+  display:flex;
+  gap:20px;
+  flex-wrap:wrap;
 }
 
 .card{
-  flex:1;min-width:250px;
-  background:#111;padding:30px;border-radius:12px;
+  flex:1;
+  min-width:250px;
+  background:#111;
+  padding:30px;
+  border-radius:12px;
+  text-align:center;
 }
 
-.card h3{color:#c59d5f;}
+.card h3{
+  color:#c59d5f;
+  margin-bottom:10px;
+}
 
 /* REVIEWS */
 .reviews{
@@ -127,6 +161,20 @@ nav a:hover{color:#c59d5f;}
   border-radius:12px;
 }
 
+/* FLOAT BUTTON */
+.sticky-btn{
+  position:fixed;
+  bottom:80px;
+  right:20px;
+  background:#c59d5f;
+  padding:15px 20px;
+  border-radius:50px;
+  color:black;
+  text-decoration:none;
+  font-weight:bold;
+  box-shadow:0 0 20px rgba(197,157,95,0.6);
+}
+
 /* WHATSAPP */
 .whatsapp{
   position:fixed;
@@ -138,6 +186,18 @@ nav a:hover{color:#c59d5f;}
   border-radius:50px;
 }
 
+/* ANIMATION */
+.fade{
+  opacity:0;
+  transform:translateY(40px);
+  transition:0.8s;
+}
+
+.fade.active{
+  opacity:1;
+  transform:translateY(0);
+}
+
 @media(max-width:768px){
   .hero h1{font-size:40px;}
 }
@@ -146,6 +206,7 @@ nav a:hover{color:#c59d5f;}
 
 <body>
 
+<!-- NAV -->
 <nav>
 <div class="container">
 <div><strong>Juhász István Barber</strong></div>
@@ -159,6 +220,7 @@ nav a:hover{color:#c59d5f;}
 </div>
 </nav>
 
+<!-- HERO -->
 <section class="hero">
 <div class="container">
 
@@ -170,34 +232,29 @@ Modern fade, precíz vágás, prémium élmény.
 Foglalj időpontot és emeld a stílusod következő szintre.
 </p>
 
-<a href="https://calendly.com/IDE_A_LINKED" target="_blank" class="btn">
-Időpont foglalás
-</a>
-
-<div style="margin-top:30px;display:flex;gap:10px;flex-wrap:wrap;">
-<img src="1.jpg" style="width:100px;border-radius:8px;">
-<img src="2.jpg" style="width:100px;border-radius:8px;">
-<img src="3.jpg" style="width:100px;border-radius:8px;">
-</div>
-
+<a href="#" class="btn">Időpont foglalás</a>
 </div>
 </section>
 
+<!-- ABOUT -->
 <section id="about" class="about fade">
 <div class="container">
 <img src="5.jpg">
 <p>
-Több éves tapasztalattal várlak, ha igényes frizurát szeretnél.<br>
-Modern stílusok, skin fade, precíz vágás.
+Sziasztok! Több éves tapasztalattal rendelkezem, rengeteg vendégnek segítettem már.<br>
+Precíz munkával és modern stílusokkal várlak.<br>
+Ha igényes frizurát szeretnél, jó helyen jársz.
 </p>
 </div>
 </section>
 
+<!-- SERVICES -->
 <section id="services" class="fade">
 <div class="container">
 <h2>Árak</h2>
 
 <div class="cards">
+
 <div class="card">
 <h3>Hajvágás</h3>
 <p>5000 Ft</p>
@@ -212,25 +269,29 @@ Modern stílusok, skin fade, precíz vágás.
 <h3>Szakáll</h3>
 <p>3000 Ft</p>
 </div>
-</div>
 
+</div>
 </div>
 </section>
 
+<!-- REVIEWS -->
 <section class="reviews fade">
 <div class="container">
 <h2>Vélemények</h2>
+
 <p class="star">★★★★★</p>
 <p>“A legjobb barber a környéken!”</p>
 
 <p class="star">★★★★★</p>
 <p>“Precíz, gyors, profi munka.”</p>
+
 <p style="margin-top:20px;color:#c59d5f;font-weight:bold;">
 100+ elégedett vendég
 </p>
 </div>
 </section>
 
+<!-- MAP -->
 <section class="map fade">
 <div class="container">
 <h2>Helyszín</h2>
@@ -238,13 +299,9 @@ Modern stílusok, skin fade, precíz vágás.
 </div>
 </section>
 
-<a href="https://calendly.com/IDE_A_LINKED" class="sticky-btn">
-Foglalás
-</a>
-
-<a href="https://wa.me/36704095505" class="whatsapp">
-Írj most
-</a>
+<!-- FLOAT BUTTONS -->
+<a href="#" class="sticky-btn">Foglalás</a>
+<a href="https://wa.me/36704095505" class="whatsapp">Írj most</a>
 
 <script>
 let elements = document.querySelectorAll(".fade");
@@ -258,40 +315,6 @@ window.addEventListener("scroll",()=>{
   });
 });
 </script>
-
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="hu">
-<head>
-<meta charset="UTF-8">
-<title>Referencia</title>
-
-<style>
-body{background:#0b0b0b;color:white;text-align:center;}
-.gallery{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-padding:50px;
-}
-.gallery img{
-width:100%;
-border-radius:12px;
-}
-</style>
-</head>
-
-<body>
-
-<h1>Referencia</h1>
-
-<div class="gallery">
-<img src="1.jpg">
-<img src="2.jpg">
-<img src="3.jpg">
-<img src="4.jpg">
-</div>
 
 </body>
 </html>
